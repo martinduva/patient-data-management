@@ -43,6 +43,9 @@ devDependencies:
   "@types/react-dom":
     specifier: ^19
     version: 19.0.3(@types/react@19.0.8)
+  clsx:
+    specifier: ^2.1.1
+    version: 2.1.1
   eslint:
     specifier: ^9
     version: 9.19.0
@@ -73,6 +76,9 @@ devDependencies:
   prettier:
     specifier: ^3.4.2
     version: 3.4.2
+  tailwind-merge:
+    specifier: ^3.0.1
+    version: 3.0.1
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.17(ts-node@10.9.2)
@@ -2613,6 +2619,14 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       wrap-ansi: 7.0.0
+    dev: true
+
+  /clsx@2.1.1:
+    resolution:
+      {
+        integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==,
+      }
+    engines: { node: ">=6" }
     dev: true
 
   /co@4.6.0:
@@ -7393,6 +7407,13 @@ packages:
     resolution:
       {
         integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==,
+      }
+    dev: true
+
+  /tailwind-merge@3.0.1:
+    resolution:
+      {
+        integrity: sha512-AvzE8FmSoXC7nC+oU5GlQJbip2UO7tmOhOfQyOmPhrStOGXHU08j8mZEHZ4BmCqY5dWTCo4ClWkNyRNx1wpT0g==,
       }
     dev: true
 
