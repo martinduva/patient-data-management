@@ -1,0 +1,8 @@
+node_modules
+.next
+coverage
+.prettierignore
+.eslintignore
+*.log
+playwright-report
+test-results
