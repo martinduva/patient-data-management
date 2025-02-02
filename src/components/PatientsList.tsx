@@ -1,14 +1,12 @@
 import PatientsListContent from "@/components/PatientsListContent";
 import { PatientsProvider } from "@/providers/patients-provider";
-import { Patient } from "@/types/patient";
+import { getPatients } from "@/services/patients";
 
-type PatientProps = {
-  initialPatients: Patient[];
-};
+export default async function PatientsList() {
+  const patients = await getPatients();
 
-export default function PatientsList({ initialPatients }: PatientProps) {
   return (
-    <PatientsProvider initialPatients={initialPatients}>
+    <PatientsProvider initialPatients={patients}>
       <PatientsListContent />
     </PatientsProvider>
   );
