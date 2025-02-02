@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Card } from "@/components/ui/Card";
+import PatientDescription from "@/components/PatientDescription";
 
 type Patient = {
   createdAt: string;
@@ -24,7 +25,7 @@ export default async function Patients() {
   return patients.map((patient) => (
     <Card
       key={patient.id}
-      className="col-span-1 flex max-h-80 w-full flex-col items-center gap-4 p-4"
+      className="col-span-1 flex h-96 w-full flex-col items-center gap-4 p-4"
     >
       {patient.avatar ? (
         <Image
@@ -35,15 +36,13 @@ export default async function Patients() {
           height={48}
         />
       ) : (
-        <div className="size-12 rounded-full bg-gray-200">
-          <p className="uppercase">{patient.name.charAt(0)}</p>
-          <p className="uppercase">{patient.name.charAt(1)}</p>
+        <div className="flex size-10 items-center justify-center rounded-full bg-gray-800 p-6">
+          <p className="uppercase">{patient.name.split(" ")[0].charAt(0)}</p>
+          <p className="uppercase">{patient.name.split(" ")[1]?.charAt(0)}</p>
         </div>
       )}
       <h2 className="text-lg">{patient.name}</h2>
-      <div className="overflow-hidden">
-        <p className="text-ellipsis">{patient.description}</p>
-      </div>
+      <PatientDescription>{patient.description}</PatientDescription>
     </Card>
   ));
 }

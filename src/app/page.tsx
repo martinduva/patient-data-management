@@ -1,4 +1,4 @@
-import Patients from "@/components/pages/Patients";
+import Patients from "@/components/Patients";
 
 export default function Home() {
   return (
@@ -9,8 +9,8 @@ export default function Home() {
         </h1>
         <Patients />
       </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        Footer!
+      <footer className="col-span-full row-start-3 flex flex-wrap items-center justify-center gap-6">
+        Martin D&apos;Uva &copy; {new Date().getFullYear()}
       </footer>
     </div>
   );
