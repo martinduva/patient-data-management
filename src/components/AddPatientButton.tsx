@@ -1,11 +1,20 @@
 "use client";
 
 import { usePatientsDispatch } from "@/providers/patients-provider";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/Dialog";
 
 export default function AddPatientButton() {
   const dispatch = usePatientsDispatch();
 
-  const addPatient = () =>
+  const addPatient = () => {
     dispatch({
       type: "added",
       payload: {
@@ -17,13 +26,34 @@ export default function AddPatientButton() {
         website: "https://example.com",
       },
     });
+  };
 
   return (
-    <button
-      onClick={addPatient}
-      className="fixed bottom-4 right-8 rounded-lg bg-indigo-900 p-4 hover:bg-indigo-800"
-    >
-      Add Patient
-    </button>
+    <>
+      <Dialog>
+        <DialogTrigger className="fixed bottom-4 right-8 rounded-lg bg-white p-4 text-black hover:bg-gray-100">
+          Add Patient
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Add Patient</DialogTitle>
+            <DialogDescription>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-4 flex justify-center space-x-4">
+            <DialogClose
+              onClick={addPatient}
+              className="rounded-lg bg-white p-4 text-black hover:bg-gray-100"
+            >
+              Add
+            </DialogClose>
+            <DialogClose className="rounded-lg bg-white p-4 text-black hover:bg-gray-100">
+              Cancel
+            </DialogClose>
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }

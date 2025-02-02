@@ -17,6 +17,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.5",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
