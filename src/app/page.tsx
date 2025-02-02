@@ -10,7 +10,7 @@ export default function Home() {
         <Patients />
       </main>
       <footer className="col-span-full row-start-3 flex flex-wrap items-center justify-center gap-6">
-        Martin D&apos;Uva &copy; {new Date().getFullYear()}
+        Patient Data Management &copy; {new Date().getFullYear()}
       </footer>
     </div>
   );

@@ -2,25 +2,10 @@ import Image from "next/image";
 
 import { Card } from "@/components/ui/Card";
 import PatientDescription from "@/components/PatientDescription";
-
-type Patient = {
-  createdAt: string;
-  name: string;
-  avatar: string;
-  description: string;
-  website: string;
-  id: string;
-};
+import { getPatients } from "@/services/patients";
 
 export default async function Patients() {
-  const usersMockApiUrl = process.env.USERS_MOCKAPI_URL;
-
-  const patientsRequestUrl =
-    usersMockApiUrl || "https://63bedcf7f5cfc0949b634fc8.mockapi.io/users";
-
-  const patientsRequest = await fetch(patientsRequestUrl);
-
-  const patients = (await patientsRequest.json()) as Patient[];
+  const patients = await getPatients();
 
   return patients.map((patient) => (
     <Card
