@@ -6,7 +6,13 @@ const getPatients = async () => {
   const patientsRequestUrl =
     usersMockApiUrl || "https://63bedcf7f5cfc0949b634fc8.mockapi.io/users";
 
-  const patientsRequest = await fetch(patientsRequestUrl);
+  const patientsRequest = await fetch(patientsRequestUrl, {
+    cache: "no-store",
+  });
+
+  if (!patientsRequest.ok) {
+    throw new Error("Failed to fetch patients data");
+  }
 
   const patients = (await patientsRequest.json()) as Patient[];
 

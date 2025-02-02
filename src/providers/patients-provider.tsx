@@ -1,6 +1,7 @@
+"use client";
+
 import { createContext, useContext, useReducer } from "react";
 
-import { getPatients } from "@/services/patients";
 import { Patient } from "@/types/patient";
 
 type PatientActionDispatch = React.Dispatch<PatientAction>;
@@ -13,9 +14,13 @@ const PatientsDispatchContext = createContext<PatientActionDispatch | null>(
 
 type PatientsProviderProps = {
   children: React.ReactNode;
+  initialPatients: Patient[];
 };
 
-export function PatientsProvider({ children }: PatientsProviderProps) {
+export function PatientsProvider({
+  children,
+  initialPatients,
+}: PatientsProviderProps) {
   const [patients, dispatch] = useReducer(patientsReducer, initialPatients);
 
   return (
@@ -67,5 +72,3 @@ function patientsReducer(
     }
   }
 }
-
-const initialPatients = await getPatients();
