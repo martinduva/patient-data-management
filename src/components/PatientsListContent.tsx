@@ -3,15 +3,13 @@
 import Image from "next/image";
 
 import AddPatientButton from "@/components/AddPatientButton";
+import EditPatientButton from "@/components/EditPatientButton";
 import PatientDescription from "@/components/PatientDescription";
 import { usePatients } from "@/providers/patients-provider";
 import { Card } from "@/components/ui/Card";
-import EditIcon from "./ui/EditIcon";
 
 export default function PatientsListContent() {
   const patients = usePatients();
-
-  console.log(patients);
 
   return (
     <>
@@ -20,7 +18,7 @@ export default function PatientsListContent() {
           key={patient.id}
           className="relative col-span-1 flex h-96 w-full flex-col items-center gap-4 p-4"
         >
-          <EditIcon className="absolute right-4 top-4" />
+          <EditPatientButton />
           {patient.avatar ? (
             <Image
               src={patient.avatar}
