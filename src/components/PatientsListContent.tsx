@@ -6,6 +6,7 @@ import AddPatientButton from "@/components/AddPatientButton";
 import PatientDescription from "@/components/PatientDescription";
 import { usePatients } from "@/providers/patients-provider";
 import { Card } from "@/components/ui/Card";
+import EditIcon from "./ui/EditIcon";
 
 export default function PatientsListContent() {
   const patients = usePatients();
@@ -17,8 +18,9 @@ export default function PatientsListContent() {
       {patients?.map((patient) => (
         <Card
           key={patient.id}
-          className="col-span-1 flex h-96 w-full flex-col items-center gap-4 p-4"
+          className="relative col-span-1 flex h-96 w-full flex-col items-center gap-4 p-4"
         >
+          <EditIcon className="absolute right-4 top-4" />
           {patient.avatar ? (
             <Image
               src={patient.avatar}
