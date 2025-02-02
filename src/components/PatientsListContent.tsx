@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 
+import AddPatientButton from "@/components/AddPatientButton";
+import PatientDescription from "@/components/PatientDescription";
 import { usePatients } from "@/providers/patients-provider";
 import { Card } from "@/components/ui/Card";
-import PatientDescription from "@/components/PatientDescription";
 
 export default function PatientsListContent() {
   const patients = usePatients();
+
+  console.log(patients);
 
   return (
     <>
@@ -38,6 +41,7 @@ export default function PatientsListContent() {
           <PatientDescription>{patient.description}</PatientDescription>
         </Card>
       ))}
+      <AddPatientButton />
     </>
   );
 }

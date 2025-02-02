@@ -8,9 +8,7 @@ type PatientActionDispatch = React.Dispatch<PatientAction>;
 
 const PatientsContext = createContext<Patient[] | null>(null);
 
-const PatientsDispatchContext = createContext<PatientActionDispatch | null>(
-  null,
-);
+const PatientsDispatchContext = createContext<PatientActionDispatch>(() => {});
 
 type PatientsProviderProps = {
   children: React.ReactNode;
@@ -56,7 +54,8 @@ function patientsReducer(
 ): Patient[] {
   switch (action.type) {
     case "added": {
-      return [...patients, action.payload];
+      console.log("added", action.payload);
+      return [action.payload, ...patients];
     }
     case "changed": {
       return patients.map((p) => {
