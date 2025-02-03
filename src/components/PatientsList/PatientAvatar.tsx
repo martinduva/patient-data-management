@@ -36,7 +36,7 @@ export const PatientAvatarFallback = ({
   patientName,
 }: PatientAvatarFallbackProps) => {
   const [firstName, lastName] = patientName.split(" ");
-  const initials = `${firstName?.charAt(0)}${lastName?.charAt(0)}`;
+  const initials = `${firstName?.charAt(0) || ""}${lastName?.charAt(0) || ""}`;
 
   return (
     <div className="flex size-10 items-center justify-center rounded-full bg-gray-800 p-6">
