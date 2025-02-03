@@ -22,7 +22,7 @@ const PatientDescription = ({
       <p className="text-base leading-relaxed text-gray-400">
         {isExpanded
           ? children
-          : `${children.substring(0, maxLength)}${children.length > maxLength && "..."}`}
+          : `${children.substring(0, maxLength)}${children.length > maxLength ? "..." : ""}`}
       </p>
       <button
         onClick={toggleExpansion}
