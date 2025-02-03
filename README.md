@@ -7,6 +7,7 @@ pnpm install
 ```
 
 Second, create a .env file and populateas follows:
+
 ```md
 USERS_MOCKAPI_URL=https://63bedcf7f5cfc0949b634fc8.mockapi.io/users
 NEXT_PUBLIC_EDIT_PATIENT_ACTIVE=false
