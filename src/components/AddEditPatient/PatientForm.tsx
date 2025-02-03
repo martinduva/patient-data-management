@@ -39,7 +39,6 @@ export default function PatientForm() {
   });
 
   function onSubmit(values: z.infer<typeof patientSchema>) {
-    console.log(values);
     addPatient({
       ...values,
       id: Math.random().toString(36).substring(2, 7),
