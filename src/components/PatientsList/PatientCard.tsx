@@ -12,7 +12,7 @@ type PatientCardProps = {
 
 export default function PatientCard({ patient }: PatientCardProps) {
   return (
-    <Card className="relative col-span-full flex h-96 w-full flex-col items-center gap-4 p-4 md:col-span-2 xl:col-span-1">
+    <Card className="relative col-span-full flex h-96 w-full flex-col items-center gap-4 p-4 shadow-lg shadow-slate-600/50 md:col-span-2 xl:col-span-1">
       {JSON.parse(process.env.NEXT_PUBLIC_EDIT_PATIENT_ACTIVE || "false") && (
         <EditPatientButton />
       )}

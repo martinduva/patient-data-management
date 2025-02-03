@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { Button } from "@/components/ui/Button";
+
 type PatientDescriptionProps = {
   children: string;
   maxLength?: number;
@@ -24,13 +26,10 @@ const PatientDescription = ({
           ? children
           : `${children.substring(0, maxLength)}${children.length > maxLength ? "..." : ""}`}
       </p>
-      <button
-        onClick={toggleExpansion}
-        className="mt-2 text-blue-500 underline"
-      >
+      <Button variant="link" onClick={toggleExpansion}>
         {children.length > maxLength &&
           (isExpanded ? "Show Less" : "Show More")}
-      </button>
+      </Button>
     </div>
   );
 };
