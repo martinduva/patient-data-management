@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 type LabelProps = React.ComponentProps<typeof LabelPrimitive.Root>;
 
-function Label({ className, ...props }: LabelProps) {
+const Label = ({ className, ...props }: LabelProps) => {
   return (
     <LabelPrimitive.Root
       className={cn(
@@ -17,6 +17,6 @@ function Label({ className, ...props }: LabelProps) {
       {...props}
     />
   );
-}
+};
 
 export { Label };

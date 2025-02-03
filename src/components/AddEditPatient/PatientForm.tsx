@@ -19,7 +19,7 @@ import { patientSchema } from "@/lib/schemas";
 import { usePatientsDispatch } from "@/providers/patients-provider";
 import { Patient } from "@/types/patient";
 
-export default function AddPatientForm() {
+export default function PatientForm() {
   const dispatch = usePatientsDispatch();
 
   const addPatient = (patient: Patient) => {

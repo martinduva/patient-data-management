@@ -1,6 +1,6 @@
 "use client";
 
-import EditIcon from "@/components/ui/EditIcon";
+import { EditIcon } from "@/components/ui/EditIcon";
 import { usePatientsDispatch } from "@/providers/patients-provider";
 
 export default function EditPatientButton() {

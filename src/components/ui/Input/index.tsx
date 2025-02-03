@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 type InputProps = React.ComponentProps<"input">;
 
-function Input({ className, type, ...props }: InputProps) {
+const Input = ({ className, type, ...props }: InputProps) => {
   return (
     <input
       type={type}
@@ -15,6 +15,6 @@ function Input({ className, type, ...props }: InputProps) {
       {...props}
     />
   );
-}
+};
 
 export { Input };

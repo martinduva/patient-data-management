@@ -1,5 +1,6 @@
 "use client";
 
+import AddPatientForm from "@/components/AddEditPatient/PatientForm";
 import {
   Dialog,
   DialogContent,
@@ -8,7 +9,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/Dialog";
-import AddPatientForm from "./AddPatientForm";
 
 export default function AddPatientButton() {
   return (

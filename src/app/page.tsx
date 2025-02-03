@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
-import PatientsList from "@/components/PatientsList";
-import PatientsListSkeleton from "@/components/PatientsListSkeleton";
+import PatientsListServer from "@/components/PatientsList/PatientsListServer";
+import PatientsListSkeleton from "@/components/PatientsList/PatientsListSkeleton";
 
 export default async function Home() {
   return (
@@ -11,7 +11,7 @@ export default async function Home() {
           Patient Data Management
         </h1>
         <Suspense fallback={<PatientsListSkeleton amount={50} />}>
-          <PatientsList />
+          <PatientsListServer />
         </Suspense>
       </main>
       <footer className="col-span-full row-start-3 flex flex-wrap items-center justify-center gap-6">

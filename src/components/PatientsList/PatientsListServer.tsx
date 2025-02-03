@@ -1,8 +1,8 @@
-import PatientsListContent from "@/components/PatientsListContent";
+import PatientsListContent from "@/components/PatientsList/PatientsListClient";
 import { PatientsProvider } from "@/providers/patients-provider";
 import { getPatients } from "@/services/patients";
 
-export default async function PatientsList() {
+export default async function PatientsListServer() {
   const patients = await getPatients();
 
   return (
