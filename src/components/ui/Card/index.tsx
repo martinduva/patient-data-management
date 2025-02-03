@@ -1,9 +1,6 @@
 import { cn } from "@/lib/utils";
 
-type CardProps = {
-  children: React.ReactNode;
-  className?: string;
-};
+type CardProps = React.ComponentProps<"div">;
 
 const Card = ({ children, className, ...props }: CardProps) => (
   <div
