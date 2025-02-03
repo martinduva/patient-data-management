@@ -2,6 +2,7 @@ import { Suspense } from "react";
 
 import PatientsListServer from "@/components/PatientsList/PatientsListServer";
 import PatientsListSkeleton from "@/components/PatientsList/PatientsListSkeleton";
+import { Toaster } from "@/components/ui/Toaster";
 
 export default async function Home() {
   return (
@@ -14,6 +15,7 @@ export default async function Home() {
           <PatientsListServer />
         </Suspense>
       </main>
+      <Toaster theme="system" duration={3000} />
       <footer className="col-span-full row-start-3 flex flex-wrap items-center justify-center gap-6">
         Patient Data Management &copy; {new Date().getFullYear()}
       </footer>

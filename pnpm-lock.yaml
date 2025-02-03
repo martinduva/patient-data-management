@@ -32,6 +32,9 @@ dependencies:
   react-hook-form:
     specifier: ^7.54.2
     version: 7.54.2(react@19.0.0)
+  sonner:
+    specifier: ^1.7.4
+    version: 1.7.4(react-dom@19.0.0)(react@19.0.0)
   zod:
     specifier: ^3.24.1
     version: 3.24.1
@@ -7540,6 +7543,19 @@ packages:
       ansi-styles: 6.2.1
       is-fullwidth-code-point: 5.0.0
     dev: true
+
+  /sonner@1.7.4(react-dom@19.0.0)(react@19.0.0):
+    resolution:
+      {
+        integrity: sha512-DIS8z4PfJRbIyfVFDVnK9rO3eYDtse4Omcm6bt0oEr5/jtLgysmjuBl1frJ9E/EQZrFmKx2A8m/s5s9CRXIzhw==,
+      }
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+    dev: false
 
   /source-map-js@1.2.1:
     resolution:
