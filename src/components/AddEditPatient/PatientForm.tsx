@@ -21,6 +21,28 @@ import { patientSchema } from "@/lib/schemas";
 import { usePatientsDispatch } from "@/providers/patients-provider";
 import { Patient } from "@/types/patient";
 
+const addPatientFormControls = [
+  {
+    name: "name",
+    label: "Name",
+    placeholder: "John Doe",
+  },
+  {
+    name: "description",
+    label: "Description",
+    placeholder: "Lorem ipsum dolor...",
+  },
+  {
+    name: "website",
+    label: "Website",
+    placeholder: "www.patientwebsite.com",
+  },
+] as {
+  name: "name" | "description" | "website";
+  label: string;
+  placeholder: string;
+}[];
+
 export default function PatientForm() {
   const dispatch = usePatientsDispatch();
 
@@ -59,45 +81,22 @@ export default function PatientForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
-              <FormControl>
-                <Input placeholder="John Doe" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="description"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Description</FormLabel>
-              <FormControl>
-                <Input placeholder="Lorem ipsum dolor..." {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="website"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Website</FormLabel>
-              <FormControl>
-                <Input placeholder="www.patientwebsite.com" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        {addPatientFormControls.map((control) => (
+          <FormField
+            key={control.name}
+            control={form.control}
+            name={control.name}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>{control.label}</FormLabel>
+                <FormControl>
+                  <Input placeholder={control.placeholder} {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        ))}
         <div className="mt-4 flex justify-center space-x-4">
           <Button type="submit">Add</Button>
           <DialogClose asChild>
