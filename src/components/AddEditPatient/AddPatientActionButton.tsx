@@ -1,6 +1,7 @@
 "use client";
 
 import AddPatientForm from "@/components/AddEditPatient/PatientForm";
+import { Button } from "@/components/ui/Button";
 import {
   Dialog,
   DialogContent,
@@ -10,18 +11,20 @@ import {
   DialogTrigger,
 } from "@/components/ui/Dialog";
 
-export default function AddPatientButton() {
+export default function AddPatientActionButton() {
   return (
     <>
       <Dialog>
-        <DialogTrigger className="fixed bottom-4 right-8 rounded-lg bg-white p-4 text-black hover:bg-gray-100">
-          Add Patient
+        <DialogTrigger asChild>
+          <Button variant="action" size="lg">
+            Add Patient
+          </Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Add Patient</DialogTitle>
             <DialogDescription>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              *Once added, a patient cannot be deleted.
             </DialogDescription>
           </DialogHeader>
           <AddPatientForm />

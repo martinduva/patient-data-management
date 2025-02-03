@@ -94,8 +94,8 @@ export default function PatientForm() {
         />
         <div className="mt-4 flex justify-center space-x-4">
           <Button type="submit">Add</Button>
-          <DialogClose className="rounded-lg bg-white p-4 text-black hover:bg-gray-100">
-            Cancel
+          <DialogClose asChild>
+            <Button variant="outline">Cancel</Button>
           </DialogClose>
         </div>
       </form>

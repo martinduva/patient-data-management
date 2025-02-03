@@ -1,6 +1,6 @@
 "use client";
 
-import AddPatientButton from "@/components/AddEditPatient/AddPatientButton";
+import AddPatientButton from "@/components/AddEditPatient/AddPatientActionButton";
 import PatientCard from "@/components/PatientsList/PatientCard";
 import { usePatients } from "@/providers/patients-provider";
 
